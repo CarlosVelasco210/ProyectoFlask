@@ -7,7 +7,7 @@ Este es un proyecto desarrollado con Flask que incluye funcionalidades de base d
 Para obtener una copia del proyecto en tu máquina local, ejecuta:
 
 ```bash
-git clone 
+git clone https://github.com/CarlosVelasco210/app.git
 ```
 
 Luego, accede a la carpeta del repositorio:
