@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% include 'banner.html' %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Créditos{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="form-container">
+            <div class="title-container">
+                <button type="button" class="back-button" onclick="window.location.href='/'">Volver</button>
+                <h1 class="title">{% block form_title %}Formulario{% endblock %}</h1>
+            </div>
+
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    </body>
+</html>

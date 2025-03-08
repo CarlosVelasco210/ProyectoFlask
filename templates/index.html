@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% include 'banner.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+    
+    <div class="title-container">
+        <div class="left">
+            <button onclick="window.location.href='/add_credit'">Agregar Crédito</button>
+        </div>
+        <div class="center">
+            <h1>Gráfica de Créditos</h1>
+        </div>
+        <div class="right">
+            <input type="text" id="searchInput" placeholder="Buscar cliente..." oninput="this.value = this.value.toUpperCase()">
+            <button onclick="searchCredit()">Buscar</button>
+            <button onclick="cancelSearch()">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="graficaCreditos"></canvas>
+    </div>
+    <div class="total-container">
+        <i class="fas fa-coins"></i>
+        <span>Total de Créditos Otorgados: <span id="totalMonto"></span></span>
+    </div>
+
+    <div class="table-container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Monto</th>
+                    <th>Tasa de Interés</th>
+                    <th>Plazo</th>
+                    <th>Fecha de Otorgamiento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="creditsTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
