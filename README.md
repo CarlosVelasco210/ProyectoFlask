@@ -13,7 +13,7 @@ git clone https://github.com/CarlosVelasco210/app.git
 Luego, accede a la carpeta del repositorio:
 
 ```bash
-cd ProyectoFlask
+cd app
 ```
 
 ## 🏗️ Crear y Activar un Entorno Virtual
@@ -21,13 +21,27 @@ cd ProyectoFlask
 Para evitar conflictos con otras dependencias de Python, se recomienda usar un entorno virtual. Para crearlo, ejecuta:
 
 ```bash
-py -3 -m venv nombre_entorno
+py -3 -m venv "nombre_entorno"
 ```
 
-Activa el entorno virtual:
+### 🔹 **Activar el entorno virtual en PowerShell**
+Si usas PowerShell, es posible que obtengas un error de permisos al activar el entorno. Para solucionarlo, antes de activarlo, ejecuta este comando:
 
-```bash
-nombre_entorno\Scripts\activate
+```powershell
+Set-ExecutionPolicy Unrestricted -Scope Process
+```
+
+Luego, activa el entorno virtual con:
+
+```powershell
+"nombre_entorno"\Scripts\activate
+```
+
+### 🔹 **Alternativa en CMD (sin errores de permisos)**
+Si prefieres evitar este problema, puedes usar CMD en lugar de PowerShell:
+
+```cmd
+"nombre_entorno"\Scripts\activate.bat
 ```
 
 ## 📦 Instalar Dependencias
